@@ -11,6 +11,13 @@ header {
     text-align: center;
 }
 
+footer {
+    background: #020617;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
 nav a {
     margin: 0 15px;
     color: #38bdf8;
