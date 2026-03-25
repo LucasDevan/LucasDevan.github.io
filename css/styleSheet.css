@@ -67,6 +67,12 @@ h2 {
     position: relative;
 }
 
+.skill-card .percentage { 
+    margin-top: 0.25rem; 
+    color: #e2e8f0; 
+    font-weight: 700; 
+}
+
 .skill-card img {
     width: 60px;
     height: 60px;
