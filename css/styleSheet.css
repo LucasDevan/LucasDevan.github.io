@@ -1,6 +1,5 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
     background: #0f172a;
     color: #e2e8f0;
 }
@@ -90,4 +89,229 @@ canvas {
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+/* Additional classes for titles */
+.title-main {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+.title-sub {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.title-small {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #cbd5e1;
+}
+
+/* Additional classes for paragraphs */
+.para {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e2e8f0;
+}
+
+.para-large {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #e2e8f0;
+}
+
+.para-small {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #94a3b8;
+}
+
+/* Additional classes for buttons */
+.btn-primary {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #38bdf8;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-secondary {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #64748b;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-large {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 15px 20px;
+    background: #38bdf8;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+aside {
+  height: 100vh; /* Full-height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+    
+aside a, aside h1, aside p {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #38bdf8;
+  font-weight: bold;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+aside a:hover {
+  background-color: #333;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        margin: 0; /* Remove left margin on mobile */
+    }
+
+    aside {
+        width: 100%;
+        height: auto;
+        position: static; /* Not fixed on mobile */
+        background-color: #091329;
+        overflow-x: hidden;
+        padding-top: 20px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    aside a, aside h1, aside p {
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    section {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+    }
+
+    .skill-card {
+        padding: 15px;
+    }
+
+    .skill-card img {
+        width: 50px;
+        height: 50px;
+    }
+
+    canvas {
+        width: 80px;
+        height: 80px;
+        top: 5px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .title-main {
+        font-size: 2rem;
+    }
+
+    .title-sub {
+        font-size: 1.5rem;
+    }
+
+    .para, .para-large {
+        font-size: 1rem;
+    }
+
+    .para-small {
+        font-size: 0.8rem;
+    }
+
+    .btn, .btn-primary, .btn-secondary, .btn-large {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 15px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .skill-card {
+        padding: 10px;
+    }
+
+    .skill-card img {
+        width: 40px;
+        height: 40px;
+    }
+
+    canvas {
+        width: 60px;
+        height: 60px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .title-main {
+        font-size: 1.8rem;
+    }
+
+    .title-sub {
+        font-size: 1.3rem;
+    }
 }
