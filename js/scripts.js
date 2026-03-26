@@ -12,7 +12,25 @@ function loadHeader() {
   document.getElementById("site-header").innerHTML=header;
 }
 
+function loadSubHeader() {
+  const header  = `<h1>My Developer Portfolio</h1>
+                    <nav>
+                      <a href="../index.html">Home</a>
+                      <a href="../aboutMe.html">About</a>
+                      <a href="projectsHub.html">My Projects</a>
+                      <a href="../skills.html">My Skills</a>
+                      <a href="../miscellaneous.html">Miscellaneous</a>
+                    </nav>`;
+  const footer =  `<a class="btn" href="../index.html">Go back to main Page</a>
+    <p>&copy; 2026 My Developer Portfolio. All rights reserved.</p>`
+  document.getElementById("site-subheader").innerHTML=header;
+  document.getElementById("site-subfooter").innerHTML=footer;
+
+}
+
 if (document.getElementById('site-header')) loadHeader();
+if (document.getElementById('site-subheader')) loadSubHeader();
+
 
 cards.forEach(card => {
   const canvas = card.querySelector('canvas');
