@@ -293,18 +293,22 @@ aside a:hover {
 /* Photo/Image container */
 .photo-container {
     flex: 1;
-    min-width: 200px;
+    min-width: fit-content + 20px;
+    height: fit-content + 20px;
     background: #0f172a;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    display: flex;
 }
 
 .photo-placeholder {
-    width: 100%;
+    width: fit-content;
     background: #1e293b;
     border-radius: 8px;
     margin: 10px 0;
+    height: fit-content;
+    display: flex;
 }
 
 /* TOEIC Image - Full width */
