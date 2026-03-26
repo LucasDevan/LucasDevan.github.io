@@ -279,6 +279,118 @@ aside a:hover {
     }
 }
 
+/* Flex container for contact and photo section */
+.contact-flex {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+/* Photo/Image container */
+.photo-container {
+    flex: 1;
+    min-width: 200px;
+    background: #0f172a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.photo-placeholder {
+    width: 100%;
+    background: #1e293b;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+/* TOEIC Image - Full width */
+.toeic-section {
+    width: 100%;
+    background: #0f172a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.toeic-image-wrapper {
+    width: 100%;
+    background: #1e293b;
+    border-radius: 8px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.toeic-image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Margin utility classes */
+.margin-top-15 {
+    margin-top: 15px;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.margin-10-0 {
+    margin: 10px 0;
+}
+
+/* Screenshot placeholder */
+.screenshot-placeholder {
+    margin: 10px 0;
+    background: #0f172a;
+    padding: 15px;
+    border-radius: 8px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hobbies grid */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Gallery section */
+.gallery-section {
+    margin-top: 20px;
+    background: #0f172a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Gallery grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Gallery item */
+.gallery-item {
+    background: #1e293b;
+    height: 150px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @media (max-width: 480px) {
     section {
         padding: 15px;
@@ -313,5 +425,9 @@ aside a:hover {
 
     .title-sub {
         font-size: 1.3rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
