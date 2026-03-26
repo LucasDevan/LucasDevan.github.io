@@ -9,7 +9,11 @@ function loadHeader() {
                       <a href="skills.html">My Skills</a>
                       <a href="miscellaneous.html">Miscellaneous</a>
                     </nav>`;
+
+const footer = `<a class="btn" href="index.html">Go back to main Page</a>
+    <p>&copy; 2026 My Developer Portfolio. All rights reserved.</p>`;
   document.getElementById("site-header").innerHTML=header;
+document.getElementById("site-footer").innerHTML=footer;
 }
 
 function loadSubHeader() {
