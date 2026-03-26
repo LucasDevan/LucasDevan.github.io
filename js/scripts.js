@@ -1,30 +1,18 @@
 const cards = document.querySelectorAll('.skill-card');
 
-/*
 function loadHeader() {
-  var xhttp, elmnt;
-  elmnt = document.getElementById("site-header");
-  const file  = 'componants/header.html';
-  if (file) {
-      // Make an HTTP request using the attribute value as the file name: 
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          // Remove the attribute, and call this function once more: /
-          elmnt.removeAttribute("site-header");
-          loadHeader();
-        }
-      }
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      // Exit the function: /
-      return;
-    }
+  const header  = `<h1>My Developer Portfolio</h1>
+                    <nav>
+                      <a href="index.html">Home</a>
+                      <a href="aboutMe.html">About</a>
+                      <a href="projects/projectsHub.html">My Projects</a>
+                      <a href="skills.html">My Skills</a>
+                      <a href="miscellaneous.html">Miscellaneous</a>
+                    </nav>`;
+  document.getElementById("site-header").innerHTML=header;
 }
+
 if (document.getElementById('site-header')) loadHeader();
-*/
 
 cards.forEach(card => {
   const canvas = card.querySelector('canvas');
