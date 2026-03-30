@@ -191,94 +191,6 @@ aside a:hover {
   background-color: #333;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    body {
-        margin: 0; /* Remove left margin on mobile */
-    }
-
-    aside {
-        width: 100%;
-        height: auto;
-        position: static; /* Not fixed on mobile */
-        background-color: #091329;
-        overflow-x: hidden;
-        padding-top: 20px;
-        box-sizing: border-box;
-        text-align: center;
-    }
-
-    aside a, aside h1, aside p {
-        display: inline-block;
-        padding: 5px 10px;
-        font-size: 12px;
-        text-align: center;
-    }
-
-    body {
-        font-size: 14px;
-    }
-
-    header {
-        padding: 15px;
-    }
-
-    nav a {
-        margin: 0 10px;
-        font-size: 14px;
-    }
-
-    section {
-        padding: 20px;
-        max-width: 100%;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 15px;
-    }
-
-    .skill-card {
-        padding: 15px;
-    }
-
-    .skill-card img {
-        width: 50px;
-        height: 50px;
-    }
-
-    canvas {
-        width: 80px;
-        height: 80px;
-        top: 5px;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    .title-main {
-        font-size: 2rem;
-    }
-
-    .title-sub {
-        font-size: 1.5rem;
-    }
-
-    .para, .para-large {
-        font-size: 1rem;
-    }
-
-    .para-small {
-        font-size: 0.8rem;
-    }
-
-    .btn, .btn-primary, .btn-secondary, .btn-large {
-        padding: 8px 12px;
-        font-size: 14px;
-    }
-}
-
 /* Flex container for contact and photo section */
 .contact-flex {
     display: flex;
@@ -380,7 +292,7 @@ aside a:hover {
 /* Gallery grid */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
     margin-top: 15px;
 }
@@ -388,11 +300,115 @@ aside a:hover {
 /* Gallery item */
 .gallery-item {
     background: #1e293b;
-    height: 150px;
     border-radius: 8px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 15px;
+    text-align: center;
+}
+
+.gallery-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #38bdf8;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.gallery-description {
+    font-size: 1rem;
+    color: #e2e8f0;
+    line-height: 1.5;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        margin: 0; /* Remove left margin on mobile */
+    }
+
+    aside {
+        width: 100%;
+        height: auto;
+        position: static; /* Not fixed on mobile */
+        background-color: #091329;
+        overflow-x: hidden;
+        padding-top: 20px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    aside a, aside h1, aside p {
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    section {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+    }
+
+    .skill-card {
+        padding: 15px;
+    }
+
+    .skill-card img {
+        width: 50px;
+        height: 50px;
+    }
+
+    canvas {
+        width: 80px;
+        height: 80px;
+        top: 5px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .title-main {
+        font-size: 2rem;
+    }
+
+    .title-sub {
+        font-size: 1.5rem;
+    }
+
+    .para, .para-large {
+        font-size: 1rem;
+    }
+
+    .para-small {
+        font-size: 0.8rem;
+    }
+
+    .btn, .btn-primary, .btn-secondary, .btn-large {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 480px) {
