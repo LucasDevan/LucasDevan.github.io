@@ -1,6 +1,6 @@
 const cards = document.querySelectorAll('.skill-card');
 
-function loadHeader() {
+function loadHeaderFooter() {
   const header  = `<h1>My Developer Portfolio</h1>
                     <nav>
                       <a href="index.html">Home</a>
@@ -12,11 +12,12 @@ function loadHeader() {
 
 const footer = `<a class="btn" href="index.html">Go back to main Page</a>
     <p>&copy; 2026 My Developer Portfolio. All rights reserved.</p>`;
+
   document.getElementById("site-header").innerHTML=header;
 document.getElementById("site-footer").innerHTML=footer;
 }
 
-function loadSubHeader() {
+function loadSubHeaderFooter() {
   const header  = `<h1>My Developer Portfolio</h1>
                     <nav>
                       <a href="../index.html">Home</a>
@@ -25,15 +26,16 @@ function loadSubHeader() {
                       <a href="../skills.html">My Skills</a>
                       <a href="../miscellaneous.html">Miscellaneous</a>
                     </nav>`;
+
   const footer =  `<a class="btn" href="../index.html">Go back to main Page</a>
-    <p>&copy; 2026 My Developer Portfolio. All rights reserved.</p>`
+    <p>&copy; 2026 My Developer Portfolio. All rights reserved.</p>`;
+
   document.getElementById("site-subheader").innerHTML=header;
   document.getElementById("site-subfooter").innerHTML=footer;
-
 }
 
-if (document.getElementById('site-header')) loadHeader();
-if (document.getElementById('site-subheader')) loadSubHeader();
+if (document.getElementById('site-header')) loadHeaderFooter();
+if (document.getElementById('site-subheader')) loadSubHeaderFooter();
 
 
 cards.forEach(card => {
