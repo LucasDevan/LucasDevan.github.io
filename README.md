@@ -9,12 +9,19 @@ This project aims to display my différents skills, projects and interrest to po
 
 /EBOOK
   ├── index.html
+  ├── aboutMe.html
+  ├── miscellaneous.html
+  ├── skills.html
   ├── projects
+  │     ├── projectHub.html
   │     ├── project1.html
-  │     └── project2.html
+  │     ├── ...
+  │     └── projectXYZ.html
   ├── css/
   │     └── styles.css
   ├── js/
   │     └── script.js
   └── assets/
-        └── images/
+        ├── Logos/
+        │     └── image.svg
+        └── image.svg
