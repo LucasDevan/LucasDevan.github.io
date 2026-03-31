@@ -368,8 +368,19 @@ aside a:hover {
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--link-color);
-    margin-bottom: 8px;
+    margin-bottom: 0px;
     text-align: center;
+    width: 100%;
+}
+
+.gallery-subtitle {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #595454;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-align: center;
+    width: 100%;
 }
 
 .gallery-description {
