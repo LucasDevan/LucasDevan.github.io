@@ -5,7 +5,7 @@ function loadHeaderFooter() {
                     <nav>
                       <a href="index.html">Home</a>
                       <a href="aboutMe.html">About</a>
-                      <a href="projects/projectsHub.html">My Projects</a>
+                      <a href="projects.html">My Projects</a>
                       <a href="skills.html">My Skills</a>
                       <a href="miscellaneous.html">Miscellaneous</a>
                     </nav>`;
@@ -22,7 +22,7 @@ function loadSubHeaderFooter() {
                     <nav>
                       <a href="../index.html">Home</a>
                       <a href="../aboutMe.html">About</a>
-                      <a href="projectsHub.html">My Projects</a>
+                      <a href="../projects.html">My Projects</a>
                       <a href="../skills.html">My Skills</a>
                       <a href="../miscellaneous.html">Miscellaneous</a>
                     </nav>`;
