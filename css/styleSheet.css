@@ -5,6 +5,7 @@
   --extremums-background-color: #020617;
   --card-background-color: #1e293b ;
   --link-color:#38bdf8;
+  --selected-link-color: #1d6888;
 }
 
 body {
@@ -19,13 +20,13 @@ header {
     text-align: center;
 }
 
-header h1 a{
+h1 a, h2 a, h3 a{
     color: var(--text-color);
     text-decoration: none;
 }
 
-header h1 a:hover{
-    color: var(--important-text-color);
+a:hover{
+    color: var(--selected-link-color);
 }
 
 footer {
@@ -42,6 +43,7 @@ nav a {
     font-weight: bold;
 }
 
+
 section {
     padding: 40px;
     max-width: 900px;
@@ -55,16 +57,6 @@ section {
     border-radius: 10px;
 }
 
-.card h3 a{
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-.card h3 a:hover{
-    color: var(--text-color);
-    text-decoration: none;
-}
-
 .btn {
     display: inline-block;
     margin-top: 10px;
@@ -73,6 +65,10 @@ section {
     color: black;
     border-radius: 5px;
     text-decoration: none;
+}
+
+.btn:hover{
+    color: black;
 }
 
 img {
