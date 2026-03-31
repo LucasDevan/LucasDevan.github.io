@@ -389,6 +389,29 @@ aside a:hover {
     line-height: 1.5;
 }
 
+#celesteRunnerCard{
+    position: relative;
+    overflow: hidden;
+    background-image: url('../assets/Projects/CelesteRunner/CelesteRunnerLogo.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+#celesteRunnerCard::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45); /* adjust opacity for more or less dimming */
+    pointer-events: none;
+    z-index: 0;
+}
+
+#celesteRunnerCard > * {
+    position: relative;
+    z-index: 1;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     body {
