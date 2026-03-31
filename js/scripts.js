@@ -73,3 +73,20 @@ cards.forEach(card => {
   percentageEl.textContent = `${percent}%`;
 });
 
+// Clickable project cards (works with cards tagged .clickable)
+document.querySelectorAll('.card.clickable').forEach(card => {
+  const href = card.dataset.href;
+  if (!href) return;
+
+  card.addEventListener('click', () => {
+    window.location.href = href;
+  });
+
+  card.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      window.location.href = href;
+    }
+  });
+});
+
