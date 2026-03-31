@@ -53,6 +53,16 @@ a .card{
     text-decoration: none;
 }
 
+p a{
+    text-decoration: none;
+    color: var(--selected-link-color);
+}
+
+p a:hover{
+    text-decoration: none;
+    color: var(--link-color);
+}
+
 .card {
     background: var(--card-background-color);
     padding: 20px;
