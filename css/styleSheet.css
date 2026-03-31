@@ -1,26 +1,35 @@
+:root {
+  --background-color: #0f172a;
+  --text-color: #e2e8f0;
+  --important-text-color: #0062ff;
+  --extremums-background-color: #020617;
+  --card-background-color: #1e293b ;
+  --link-color:#38bdf8;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: #e2e8f0;
+    background: var(--background-color);
+    color: var(--text-color);
 }
 
 header {
-    background: #020617;
+    background: var(--extremums-background-color);
     padding: 20px;
     text-align: center;
 }
 
 header h1 a{
-    color: #ffffff;
+    color: var(--text-color);
     text-decoration: none;
 }
 
 header h1 a:hover{
-    color: #0062ff;
+    color: var(--important-text-color);
 }
 
 footer {
-    background: #0e0f11;
+    background: var(--extremums-background-color);
     padding: 20px;
     text-align: center;
     margin-top: 40px;
@@ -28,7 +37,7 @@ footer {
 
 nav a {
     margin: 0 15px;
-    color: #38bdf8;
+    color: var(--link-color);
     text-decoration: none;
     font-weight: bold;
 }
@@ -40,17 +49,27 @@ section {
 }
 
 .card {
-    background: #1e293b;
+    background: var(--card-background-color);
     padding: 20px;
     margin: 15px 0;
     border-radius: 10px;
+}
+
+.card h3 a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.card h3 a:hover{
+    color: var(--text-color);
+    text-decoration: none;
 }
 
 .btn {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 15px;
-    background: #38bdf8;
+    background: var(--link-color);
     color: black;
     border-radius: 5px;
     text-decoration: none;
@@ -63,7 +82,7 @@ img {
 }
 
 h2 {
-    border-bottom: 2px solid #38bdf8;
+    border-bottom: 2px solid var(--link-color);
     padding-bottom: 10px;
 }
 
@@ -75,7 +94,7 @@ h2 {
 }
 
 .skill-card {
-    background: #1e293b;
+    background: var(--card-background-color);
     padding: 20px;
     border-radius: 12px;
     text-align: center;
@@ -84,7 +103,7 @@ h2 {
 
 .skill-card .percentage { 
     margin-top: 0.25rem; 
-    color: #e2e8f0; 
+    color: var(--text-color); 
     font-weight: 700; 
 }
 
@@ -104,32 +123,32 @@ canvas {
 .title-main {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #38bdf8;
+    color: var(--link-color);
 }
 
 .title-sub {
     font-size: 1.8rem;
     font-weight: 600;
-    color: #e2e8f0;
+    color: var(--text-color);
 }
 
 .title-small {
     font-size: 1.2rem;
     font-weight: 500;
-    color: #cbd5e1;
+    color: var(--text-color);
 }
 
 /* Additional classes for paragraphs */
 .para {
     font-size: 1rem;
     line-height: 1.6;
-    color: #e2e8f0;
+    color: var(--text-color);
 }
 
 .para-large {
     font-size: 1.2rem;
     line-height: 1.7;
-    color: #e2e8f0;
+    color: var(--text-color);
 }
 
 .para-small {
@@ -143,7 +162,7 @@ canvas {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 15px;
-    background: #38bdf8;
+    background: var(--link-color);
     color: black;
     border-radius: 5px;
     text-decoration: none;
@@ -165,7 +184,7 @@ canvas {
     display: inline-block;
     margin-top: 10px;
     padding: 15px 20px;
-    background: #38bdf8;
+    background: var(--link-color);
     color: black;
     border-radius: 5px;
     text-decoration: none;
@@ -190,7 +209,7 @@ aside a, aside h1, aside p {
   display: block;
   padding: 10px 15px;
   text-decoration: none;
-  color: #38bdf8;
+  color: var(--link-color);
   font-weight: bold;
   font-size: 14px;
   box-sizing: border-box;
@@ -216,7 +235,7 @@ aside a:hover {
     flex: 1;
     min-width: fit-content + 20px;
     height: fit-content + 20px;
-    background: #0f172a;
+    background: var(--background-color);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -225,7 +244,7 @@ aside a:hover {
 
 .photo-placeholder {
     width: fit-content;
-    background: #1e293b;
+    background: var(--card-background-color);
     border-radius: 8px;
     margin: 10px 0;
     height: fit-content;
@@ -235,7 +254,7 @@ aside a:hover {
 /* TOEIC Image - Full width */
 .toeic-section {
     width: 100%;
-    background: #0f172a;
+    background: var(--background-color);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -244,7 +263,7 @@ aside a:hover {
 
 .toeic-image-wrapper {
     width: 100%;
-    background: #1e293b;
+    background: var(--card-background-color);
     border-radius: 8px;
     margin: 10px 0;
     overflow: hidden;
@@ -272,7 +291,7 @@ aside a:hover {
 /* Screenshot placeholder */
 .screenshot-placeholder {
     margin: 10px 0;
-    background: #0f172a;
+    background: var(--background-color);
     padding: 15px;
     border-radius: 8px;
     height: 150px;
@@ -292,7 +311,7 @@ aside a:hover {
 /* Gallery section */
 .gallery-section {
     margin-top: 20px;
-    background: #0f172a;
+    background: var(--background-color);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -308,7 +327,7 @@ aside a:hover {
 
 /* Gallery item */
 .gallery-item {
-    background: #1e293b;
+    background: var(--card-background-color);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -321,14 +340,14 @@ aside a:hover {
 .gallery-title {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #38bdf8;
+    color: var(--link-color);
     margin-bottom: 8px;
     text-align: center;
 }
 
 .gallery-description {
     font-size: 1rem;
-    color: #e2e8f0;
+    color: var(--text-color);
     line-height: 1.5;
 }
 
