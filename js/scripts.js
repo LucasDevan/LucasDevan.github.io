@@ -1,9 +1,8 @@
 const cards = document.querySelectorAll('.skill-card');
 
 function loadHeaderFooter() {
-  const header  = `<h1>My Developer Portfolio</h1>
+  const header  = `<h1><a href="index.html">My Developer Portfolio</a></h1>
                     <nav>
-                      <a href="index.html">Home</a>
                       <a href="aboutMe.html">About</a>
                       <a href="projects.html">My Projects</a>
                       <a href="skills.html">My Skills</a>
@@ -18,9 +17,8 @@ document.getElementById("site-footer").innerHTML=footer;
 }
 
 function loadSubHeaderFooter() {
-  const header  = `<h1>My Developer Portfolio</h1>
+  const header  = `<h1><a href="../index.html">My Developer Portfolio</a></h1>
                     <nav>
-                      <a href="../index.html">Home</a>
                       <a href="../aboutMe.html">About</a>
                       <a href="../projects.html">My Projects</a>
                       <a href="../skills.html">My Skills</a>

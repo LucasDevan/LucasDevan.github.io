@@ -10,8 +10,17 @@ header {
     text-align: center;
 }
 
+header h1 a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header h1 a:hover{
+    color: #0062ff;
+}
+
 footer {
-    background: #020617;
+    background: #0e0f11;
     padding: 20px;
     text-align: center;
     margin-top: 40px;
