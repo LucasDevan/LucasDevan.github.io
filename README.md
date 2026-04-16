@@ -2,7 +2,7 @@
 
 ##Description
 
-This project aims to display my différents skills, projects and interrest to potential employers in an interactive manner.
+This project aims to display my programming skills, projects and other interrest to potential employers in an interactive manner.
 
 
 ##Structure
