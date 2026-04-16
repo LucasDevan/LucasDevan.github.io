@@ -125,6 +125,14 @@ p a:hover{
     text-decoration: none;
 }
 
+.btn a{
+    color: var(--text-color);
+}
+
+.btn a:hover{
+    color: var(--selected-link-color);
+}
+
 .btn:hover{
     color: black;
 }
