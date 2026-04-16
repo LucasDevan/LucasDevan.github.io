@@ -393,8 +393,8 @@ aside a:hover {
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     padding: 15px;
     text-align: center;
 }
