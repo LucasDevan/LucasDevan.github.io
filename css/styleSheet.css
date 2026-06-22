@@ -70,12 +70,12 @@ p a:hover{
     border-radius: 10px;
 }
 
-.card.clickable {
+.card.clickable, .gallery-item-clickable{
     cursor: pointer;
     transition: transform 0.16s ease, background-color 0.16s ease, box-shadow 0.16s ease;
 }
 
-.card.clickable:hover {
+.card.clickable:hover, .gallery-item-clickable:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.25);
 }
@@ -388,7 +388,7 @@ aside a:hover {
 }
 
 /* Gallery item */
-.gallery-item {
+.gallery-item, .gallery-item-clickable {
     background: var(--card-background-color);
     border-radius: 8px;
     display: flex;
@@ -454,14 +454,9 @@ aside a:hover {
     }
 
     aside {
-        width: 100%;
-        height: auto;
-        position: static; /* Not fixed on mobile */
-        background-color: #091329;
-        overflow-x: hidden;
-        padding-top: 20px;
-        box-sizing: border-box;
-        text-align: center;
+        width: 0%;
+        height: 0;
+        display: none;
     }
 
     aside a, aside h1, aside p {

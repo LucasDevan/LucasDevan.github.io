@@ -90,3 +90,18 @@ document.querySelectorAll('.card.clickable').forEach(card => {
   });
 });
 
+document.querySelectorAll('.gallery-item').forEach(card => {
+  const href = card.dataset.href;
+  if (!href) return;
+
+  card.addEventListener('click', () => {
+    window.location.href = href;
+  });
+
+  card.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      window.location.href = href;
+    }
+  });
+});
