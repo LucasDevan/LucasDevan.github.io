@@ -1,11 +1,11 @@
 :root {
-  --background-color: #0f172a;
+  --background-color: #1a2131;
   --text-color: #e2e8f0;
-  --important-text-color: #0062ff;
-  --extremums-background-color: #020617;
-  --card-background-color: #1e293b ;
-  --link-color:#38bdf8;
-  --selected-link-color: #1d6888;
+  --important-text-color: #024dc5;
+  --extremums-background-color: #010411;
+  --card-background-color: #152946 ;
+  --selected-link-color:#1590c5;
+  --link-color: #16678a;
 }
 
 body {
@@ -192,6 +192,13 @@ canvas {
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--text-color);
+}
+
+.title-sub a{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--link-color);
+    padding: 0;
 }
 
 .title-small {
