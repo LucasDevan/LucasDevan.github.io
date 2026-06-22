@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Challenge Generator</title>
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<header id="site-header">
+  <h1><a href="../../index.html">My Developer Portfolio</a></h1>
+  <nav>
+    <a href="../../aboutMe.html">About</a>
+    <a href="../../projects.html">My Projects</a>
+    <a href="../../skills.html">My Skills</a>
+    <a href="../../miscellaneous.html">Miscellaneous</a>
+  </nav>
+</header>
+<body>
+  <div class="container">
+    <h2 id="hardModeTitle">Hard mode</h2>
+    <button type="checkbox" class="hardMode" id="hardModeButton">OFF</button>
+    <h1>Challenge Generator</h1>
+    <div class="challenge-box" id="challengeBox">
+      <div class="activity" id="activity">Press "Generate Challenge"</div>
+      <div class="challenge" id="challenge"></div>
+    </div>
+    <button class="generate" id="generateButton">Generate Challenge</button>
+    <div class="actions">
+      <button class="success" id="successButton">✅ Completed</button>
+      <button class="fail" id="failButton">❌ Failed</button>
+      <button class="skip" id="skipButton">⏭️ Skips</button>
+    </div>
+    <div class="counters", id="counters">
+      <div  class="countersDisplay">✅ Completed <span id="completedCount">0</span></div>
+      <div class="countersDisplay">❌ Failed <span id="failedCount">0</span></div>
+      <div class="countersDisplay">⏭️ Skips <span id="skipsCount">5</span></div>
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+</html>
