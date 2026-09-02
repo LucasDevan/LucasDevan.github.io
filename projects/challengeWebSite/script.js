@@ -212,10 +212,11 @@ function changeLanguage(){
             completedCountText.firstChild.textContent = "✅ Completed ";
             failedCountText.firstChild.textContent = "❌ Failed ";
             skipCountText.firstChild.textContent = "⏭️ Skips ";
-            resetButton = "reset";
+            resetButton.innerHTML = "Reset";
             failButton.innerHTML = "❌ Failed"
             skipButton.innerHTML = "⏭️ Skip";
             successButton.innerHTML = "✅ Completed";
+            generateButton.innerHTML = "Generate Challenge"
             break;
         case languages.FRENCH:
         default:
@@ -224,10 +225,11 @@ function changeLanguage(){
             completedCountText.firstChild.textContent = "✅ Réussi ";
             failedCountText.firstChild.textContent = "❌ Échoué ";
             skipCountText.firstChild.textContent = "⏭️ Sauts ";
-            resetButton.innerHTML = "réinitialisé";
+            resetButton.innerHTML = "Réinitialisé";
             failButton.innerHTML = "❌ Échoué";
             skipButton.innerHTML = "⏭️ Sauter";
             successButton.innerHTML = "✅ Réussi";
+            generateButton.innerHTML = "Générer un défi"
             break;
         };
 }
