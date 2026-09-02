@@ -216,7 +216,7 @@ function changeLanguage(){
             failButton.innerHTML = "❌ Failed"
             skipButton.innerHTML = "⏭️ Skip";
             successButton.innerHTML = "✅ Completed";
-            generateButton.innerHTML = "Generate Challenge"
+            generateButton.innerHTML = "Generate a challenge"
             break;
         case languages.FRENCH:
         default:
