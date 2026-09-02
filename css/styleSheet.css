@@ -344,8 +344,8 @@ aside a:hover {
     display: flex;
 }
 
-/* TOEIC Image - Full width */
-.toeic-section {
+/* document Image - Full width */
+.document-section {
     width: 100%;
     background: var(--background-color);
     padding: 20px;
@@ -354,7 +354,7 @@ aside a:hover {
     margin: 20px 0;
 }
 
-.toeic-image-wrapper {
+.document-image-wrapper {
     width: 100%;
     background: var(--card-background-color);
     border-radius: 8px;
@@ -362,7 +362,7 @@ aside a:hover {
     overflow: hidden;
 }
 
-.toeic-image-wrapper img {
+.document-image-wrapper img {
     width: 100%;
     height: auto;
     border-radius: 8px;
