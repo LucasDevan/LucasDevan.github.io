@@ -53,6 +53,8 @@ a .card{
     text-decoration: none;
 }
 
+
+
 p a{
     text-decoration: none;
     color: var(--selected-link-color);
@@ -161,24 +163,46 @@ h2 {
     border-radius: 12px;
     text-align: center;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
 }
 
-.skill-card .percentage { 
-    margin-top: 0.25rem; 
-    color: var(--text-color); 
-    font-weight: 700; 
+.skill-card p {
+    margin: 0;
 }
 
 .skill-card img {
-    width: 60px;
-    height: 60px;
+    max-width: 100px;
+    width: auto;
+    max-height: 80px;
+    height: auto;
+    margin: 0;
+}
+
+.skill-stars {
+    gap: 4px;
+    width: 100%;
+    margin-top: 2px;
+    font-size: 1.3rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #facc15;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+}
+
+.skill-star.empty {
+    color: #0f172a;
+    font-size: 1.5rem;
+    text-shadow: none;
 }
 
 canvas {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: none;
 }
 
 /* Additional classes for titles */
@@ -503,6 +527,11 @@ aside a:hover {
     .skill-card img {
         width: 50px;
         height: 50px;
+    }
+
+    .skill-stars {
+        gap: 3px;
+        font-size: 1.2rem;
     }
 
     canvas {
