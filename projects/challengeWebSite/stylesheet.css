@@ -5,13 +5,32 @@
     --success: #16a34a;
     --fail: #dc2626;
     --skip: #f59e0b;
+    --reset: #3c5e63;
     --text: #1e293b;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 nav{
-    background-color: #eeeeee;
     color: #1d87b4;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h1 a{
+    color: #eeeeee;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    padding: 0 10px;
+    color: var(--selected-link-color);
 }
 
 a:hover {
@@ -20,27 +39,13 @@ a:hover {
 
 header {
     border-radius: 8px;
-    background-color: #eeeeee;
+    background-color: #1a2131;
+    color: #024dc5;
     padding: 20px;
     text-align: center;
     width: auto;
     height: auto;
     position: static;
-}
-
-a{
-    text-decoration: none;
-    padding: 0 10px;
-}
-
-a {
-    color: var(--selected-link-color);
-}
-
-h1 a{
-    color: var(--text);
-    font-size: 1.5rem;
-    margin: 0;
 }
 
 body {
@@ -56,6 +61,12 @@ body {
     padding: 1rem;
 }
 
+.site-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
 .container {
     background: var(--card);
     box-shadow: var(--shadow);
@@ -64,11 +75,6 @@ body {
     width: 100%;
     max-width: 400px;
     text-align: center;
-}
-
-h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
 }
 
 .challenge-box {
@@ -124,6 +130,7 @@ button:hover {
 .success { background-color: var(--success); flex: 1; }
 .fail { background-color: var(--fail); flex: 1; }
 .skip { background-color: var(--skip); flex: 1; }
+.reset { background-color: var(--reset); flex: 1; }
 
 .countersDisplay{
     margin-left: 1.7rem;

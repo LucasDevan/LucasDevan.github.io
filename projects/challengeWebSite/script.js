@@ -1,17 +1,21 @@
 const activities = [
-    "Lire",
-    "Écrire",
+    "Lire un chapitre",
+    "Écrire un chapitre",
     "Dessiner",
     "Faire du sport",
     "Jouer d'un instrument",
     "Cuisiner",
     "Jouer à un jeu vidéo",
+    "Sallonger et relaxer un peut",
+    "Envoyer un message à un ami",
     "Trouver de meilleur activité pour cette liste"
 ];
 
 const challenges = [
     "Sans ta main gauche",
     "Avec un oeil fermé",
+    "En comptant de 1 à 100",
+    "En récitant l'alphabet à l'envers"
 ];
 
 const activity = document.getElementById("activity");
@@ -25,6 +29,7 @@ const counterElement = document.getElementById("counters");
 
 const hardModeTitle = document.getElementById("hardModeTitle");
 const hardModeButton = document.getElementById("hardModeButton");
+const resetButton = document.getElementById("resetButton");
 const generateButton = document.getElementById("generateButton")
 const successButton = document.getElementById("successButton");
 const failButton = document.getElementById("failButton");
@@ -42,6 +47,19 @@ console.log(currentChallenge);
 
 function randomItem(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function resetSaveInfo() {
+    const data = {
+        completed: 0,
+        failed: 0,
+        skips: 0,
+        currentChallenge: "",
+        currentActivity: "",
+        hardmode: false
+    };
+
+    localStorage.setItem("challengeData", JSON.stringify(data));
 }
 
 function saveInfo() {
@@ -108,6 +126,7 @@ function updateDisplay(firstTime = false) {
         hardModeButton.style.display = "none";
         hardModeTitle.style.display = "none";
         successButton.style.display = "none";
+        resetButton.style.display = "none";
         failButton.style.display = "none";
         skipButton.style.display = "none";
         counterElement.style.display = "none";
@@ -115,6 +134,7 @@ function updateDisplay(firstTime = false) {
         generateButton.style.display = "none";
         hardModeButton.style.display = "inline-flex";
         hardModeTitle.style.display = "block";
+        resetButton.style.display = "inline-flex";
         counterElement.style.display = "inline-flex";
         successButton.style.display = "block";
         failButton.style.display = "block";
@@ -172,6 +192,12 @@ hardModeButton.addEventListener("click", () => {
         challenge.textContent = "";
 
     }
+});
+
+resetButton.addEventListener("click", () => {
+    resetData();
+    readFromFile();
+    updateDisplay(1);
 });
 
 generateButton.addEventListener("click", () => {
