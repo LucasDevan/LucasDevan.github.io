@@ -24,7 +24,7 @@
     </div>
     <h2 id="hardModeTitle">Hard mode</h2>
     <button type="checkbox" class="hardMode" id="hardModeButton">OFF</button>
-    <h1>Challenge Generator</h1>
+    <h1 id="Challenge-generator-title">Challenge Generator</h1>
     <div class="challenge-box" id="challengeBox">
       <div class="activity" id="activity">Press "Generate Challenge"</div>
       <div class="challenge" id="challenge"></div>
@@ -33,12 +33,12 @@
     <div class="actions">
       <button class="success" id="successButton">✅ Completed</button>
       <button class="fail" id="failButton">❌ Failed</button>
-      <button class="skip" id="skipButton">⏭️ Skips</button>
+      <button class="skip" id="skipButton">⏭️ Skip</button>
     </div>
     <div class="counters", id="counters">
-      <div  class="countersDisplay">✅ Completed <span id="completedCount">0</span></div>
-      <div class="countersDisplay">❌ Failed <span id="failedCount">0</span></div>
-      <div class="countersDisplay">⏭️ Skips <span id="skipsCount">5</span></div>
+      <div  class="countersDisplay" id="completedCountText">✅ Completed <span id="completedCount">0</span></div>
+      <div class="countersDisplay" id="failedCountText">❌ Failed <span id="failedCount">0</span></div>
+      <div class="countersDisplay" id="skipCountText">⏭️ Skips <span id="skipsCount">5</span></div>
     </div>
   </div>
 </body>

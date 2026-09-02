@@ -58,10 +58,15 @@ const englishButton = document.getElementById("english");
 const completedCountEl = document.getElementById("completedCount");
 const failedCountEl = document.getElementById("failedCount");
 const skipsCountEl = document.getElementById("skipsCount");
+const completedCountText = document.getElementById("completedCountText");
+const failedCountText = document.getElementById("failedCountText");
+const skipCountText = document.getElementById("skipCountText");
 
 const counterElement = document.getElementById("counters");
 
 const hardModeTitle = document.getElementById("hardModeTitle");
+const ChallengeGeneratorTitle = document.getElementById("Challenge-generator-title");
+
 const hardModeButton = document.getElementById("hardModeButton");
 const resetButton = document.getElementById("resetButton");
 const generateButton = document.getElementById("generateButton")
@@ -197,6 +202,36 @@ function incrementSkippsCounter() {
     }
 }
 
+function changeLanguage(){
+    reselectCurrentActivity();
+    reselectCurrentChallenge();
+    switch(selectedLanguage){
+        case languages.ENGLISH:
+            hardModeTitle.innerText = "Hard mode";
+            ChallengeGeneratorTitle.innerHTML = "Challenge Generator";
+            completedCountText.firstChild.textContent = "✅ Completed ";
+            failedCountText.firstChild.textContent = "❌ Failed ";
+            skipCountText.firstChild.textContent = "⏭️ Skips ";
+            resetButton = "reset";
+            failButton.innerHTML = "❌ Failed"
+            skipButton.innerHTML = "⏭️ Skip";
+            successButton.innerHTML = "✅ Completed";
+            break;
+        case languages.FRENCH:
+        default:
+           hardModeTitle.innerText  =  "Mode difficile";
+            ChallengeGeneratorTitle.innerHTML = "Génerateur de défi";
+            completedCountText.firstChild.textContent = "✅ Réussi ";
+            failedCountText.firstChild.textContent = "❌ Échoué ";
+            skipCountText.firstChild.textContent = "⏭️ Sauts ";
+            resetButton.innerHTML = "réinitialisé";
+            failButton.innerHTML = "❌ Échoué";
+            skipButton.innerHTML = "⏭️ Sauter";
+            successButton.innerHTML = "✅ Réussi";
+            break;
+        };
+}
+
 function reselectCurrentActivity(){
     if(currentActivity == -1){
         switch(selectedLanguage){
@@ -267,16 +302,14 @@ function resetData() {
 englishButton.addEventListener("click", () => {
     console.log("swithced language to english");
     selectedLanguage = languages.ENGLISH;
-    reselectCurrentActivity();
-    reselectCurrentChallenge();
+    changeLanguage();
 });
 
 
 frenchButton.addEventListener("click", () => {
     console.log("swithced language to french");
     selectedLanguage = languages.FRENCH;
-    reselectCurrentActivity();
-    reselectCurrentChallenge();
+    changeLanguage();
 });
 
 hardModeButton.addEventListener("click", () => {
