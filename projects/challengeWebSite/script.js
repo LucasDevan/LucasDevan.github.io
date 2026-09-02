@@ -1,4 +1,13 @@
-const activities = [
+const languages = Object.freeze({
+    ENGLISH: 0,
+    FRENCH: 1,
+});
+
+const NUMBER_OF_ACTIVITIES = 10;
+const NUMBER_OF_CHALLENGES = 4;
+
+
+const activities_fr = [
     "Lire un chapitre",
     "Écrire un chapitre",
     "Dessiner",
@@ -11,15 +20,40 @@ const activities = [
     "Trouver de meilleur activité pour cette liste"
 ];
 
-const challenges = [
+const challenges_fr = [
     "Sans ta main gauche",
     "Avec un oeil fermé",
     "En comptant de 1 à 100",
     "En récitant l'alphabet à l'envers"
 ];
 
+const activities_en = [
+    "Read a chapter",
+    "Write a chapter",
+    "Draw",
+    "Play sports",
+    "Play a musical instrument",
+    "Cook",
+    "Play a video game",
+    "Lie down and relax a bit",
+    "Send a message to a friend",
+    "Find better activities for this list"
+];
+
+const challenges_en = [
+    "Without your left hand",
+    "With one eye closed",
+    "Counting from 1 to 100",
+    "Reciting the alphabet backwards"
+];
+
+let selectedLanguage = languages.ENGLISH;
+
 const activity = document.getElementById("activity");
 const challenge = document.getElementById("challenge");
+
+const frenchButton = document.getElementById("french");
+const englishButton = document.getElementById("english");
 
 const completedCountEl = document.getElementById("completedCount");
 const failedCountEl = document.getElementById("failedCount");
@@ -36,7 +70,7 @@ const failButton = document.getElementById("failButton");
 const skipButton = document.getElementById("skipButton")
 
 let completed, failed, skips;
-let currentChallenge = "", currentActivity = "";
+let currentChallenge = -1, currentActivity = -1;
 let skipsMax = 999; //default value to be changed
 let hardmode;
 
@@ -44,6 +78,18 @@ readFromFile();
 
 console.log(currentChallenge);
 
+/**
+ * Returns a random integer between min (inclusive) and max (inclusive).
+ * The value is no lower than min (or the next integer greater than min
+ * if min isn't an integer) and no greater than max (or the next integer
+ * lower than max if max isn't an integer).
+ * Using Math.round() will give you a non-uniform distribution!
+ */
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 function randomItem(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
@@ -54,8 +100,8 @@ function resetSaveInfo() {
         completed: 0,
         failed: 0,
         skips: 0,
-        currentChallenge: "",
-        currentActivity: "",
+        currentChallenge: -1,
+        currentActivity: -1,
         hardmode: false
     };
 
@@ -97,8 +143,8 @@ function readFromFile() {
         if (skips === undefined || skips === null) {
             skips = 5;
         }
-        currentChallenge = parsed.currentChallenge || "";
-        currentActivity = parsed.currentActivity || "";
+        currentChallenge = parsed.currentChallenge || -1;
+        currentActivity = parsed.currentActivity || -1;
         hardmode = parsed.hardmode || false;
         updateDisplay(0);
 
@@ -107,8 +153,8 @@ function readFromFile() {
         completed = 0;
         failed = 0;
         skips = 5;
-        currentChallenge = "";
-        currentActivity = "";
+        currentChallenge = -1;
+        currentActivity = -1;
         hardmode = false;
         updateDisplay(1);
     }
@@ -116,8 +162,8 @@ function readFromFile() {
     completedCountEl.textContent = completed;
     failedCountEl.textContent = failed;
     skipsCountEl.textContent = skips;
-    challenge.textContent = currentChallenge;
-    activity.textContent = currentActivity;
+    reselectCurrentActivity();
+    reselectCurrentChallenge();
 }
 
 function updateDisplay(firstTime = false) {
@@ -151,31 +197,87 @@ function incrementSkippsCounter() {
     }
 }
 
-function generateActivity() {
-    const act = randomItem(activities);
-    activity.textContent = act;
-    currentActivity = act;
-    currentChallenge = "";
-    if (hardmode) {
-        generateChallenge()
+function reselectCurrentActivity(){
+    if(currentActivity == -1){
+        switch(selectedLanguage){
+        case languages.ENGLISH:
+            activity.textContent =  "Press to generate challenge";
+            break;
+        case languages.FRENCH:
+            activity.textContent =  "Appuyer pour générée un défi";
+            break;
+        default:
+            activity.textContent =  "";
+            break;
+        };
+    }else{
+        switch(selectedLanguage){
+            case languages.ENGLISH:
+                activity.textContent =  activities_en.at(currentActivity);
+                break;
+            case languages.FRENCH:
+                activity.textContent =  activities_fr.at(currentActivity);
+                break;
+            default:
+                activity.textContent =  "";
+                break;
+        };
     }
+}
+
+function generateActivity() {
+    currentActivity = getRandomInt(0,NUMBER_OF_ACTIVITIES-1);
+    reselectCurrentActivity();
+    currentChallenge = -1;
+    generateChallenge()
     console.log("generated");
 }
 
-function generateChallenge() {
-    if (currentChallenge == "") {
-        const chal = randomItem(challenges);
-        challenge.textContent = chal;
-        currentChallenge = chal;
+function reselectCurrentChallenge(){
+     if (currentChallenge != -1 && hardmode) {
+        switch(selectedLanguage){
+        case languages.ENGLISH:
+            challenge.textContent  =  challenges_en.at(currentChallenge);
+            break;
+        case languages.FRENCH:
+            challenge.textContent  =  challenges_fr.at(currentChallenge);
+            break;
+        default:
+            challenge.textContent  =  "";
+            break;
+        };
     } else {
-        challenge.textContent = currentChallenge;
-        currentChallenge = currentChallenge;
+        challenge.textContent = "";
     }
+}
+
+function generateChallenge() {
+    if (hardmode) {
+        if (currentChallenge == -1) {
+            currentChallenge = getRandomInt(0,NUMBER_OF_CHALLENGES-1);
+        };
+    }
+    reselectCurrentChallenge();
 }
 
 function resetData() {
     localStorage.removeItem("challengeData");
 }
+
+englishButton.addEventListener("click", () => {
+    console.log("swithced language to english");
+    selectedLanguage = languages.ENGLISH;
+    reselectCurrentActivity();
+    reselectCurrentChallenge();
+});
+
+
+frenchButton.addEventListener("click", () => {
+    console.log("swithced language to french");
+    selectedLanguage = languages.FRENCH;
+    reselectCurrentActivity();
+    reselectCurrentChallenge();
+});
 
 hardModeButton.addEventListener("click", () => {
     console.log("added changed");

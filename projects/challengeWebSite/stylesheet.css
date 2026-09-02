@@ -48,6 +48,20 @@ header {
     position: static;
 }
 
+.language_button{
+    width: 100px;
+    height: 66px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.language_selector{
+    border-radius: 10px;
+    display: inline-flex;
+    background: #f1f5f9;
+    padding: 10px;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg);
