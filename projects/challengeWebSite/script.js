@@ -205,6 +205,7 @@ function incrementSkippsCounter() {
 function changeLanguage(){
     reselectCurrentActivity();
     reselectCurrentChallenge();
+    changeHardModeButtonText();
     switch(selectedLanguage){
         case languages.ENGLISH:
             hardModeTitle.innerText = "Hard mode";
@@ -232,6 +233,26 @@ function changeLanguage(){
             generateButton.innerHTML = "Générer un défi"
             break;
         };
+}
+
+function changeHardModeButtonText(){
+    switch(selectedLanguage){
+        case languages.ENGLISH:
+            if(hardmode){
+                hardModeButton.textContent = "ON";
+            }else{
+                hardModeButton.textContent = "OFF";
+            }
+            break;
+        case languages.FRENCH:
+        default:
+            if(hardmode){
+                hardModeButton.textContent = "ACTIVÉ";
+            }else{
+                hardModeButton.textContent = "DÉSACTIVÉ";
+            }
+            break;
+    }
 }
 
 function reselectCurrentActivity(){
@@ -317,14 +338,13 @@ frenchButton.addEventListener("click", () => {
 hardModeButton.addEventListener("click", () => {
     console.log("added changed");
     hardmode = !hardmode;
+    changeHardModeButtonText();
     if (hardmode) {
-        hardModeButton.textContent = "ON";
         challenge.style.display = "block";
         if (challenge.textContent == "") {
             generateChallenge();
         }
     } else {
-        hardModeButton.textContent = "OFF";
         challenge.style.display = "none";
         challenge.textContent = "";
 
