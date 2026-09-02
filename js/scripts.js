@@ -73,7 +73,7 @@ cards.forEach(card => {
 });
 
 // Clickable project cards (works with cards tagged .clickable)
-document.querySelectorAll('.card.clickable').forEach(card => {
+document.querySelectorAll('.card.clickable' || '.gallery-item.clickable').forEach(card => {
   const href = card.dataset.href;
   if (!href) return;
 
