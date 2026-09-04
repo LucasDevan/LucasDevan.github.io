@@ -17,15 +17,15 @@ document.getElementById("site-footer").innerHTML=footer;
 }
 
 function loadSubHeaderFooter() {
-  const header  = `<h1><a href="../index.html">My Developer Portfolio</a></h1>
+  const header  = `<h1><a href="../../index.html">My Developer Portfolio</a></h1>
                     <nav>
-                      <a href="../aboutMe.html">About</a>
-                      <a href="../projects.html">My Projects</a>
-                      <a href="../skills.html">My Skills</a>
-                      <a href="../miscellaneous.html">Miscellaneous</a>
+                      <a href="../../aboutMe.html">About</a>
+                      <a href="../../projects.html">My Projects</a>
+                      <a href="../../skills.html">My Skills</a>
+                      <a href="../../miscellaneous.html">Miscellaneous</a>
                     </nav>`;
 
-  const footer =  `<a class="btn" href="../index.html">Go back to main Page</a>
+  const footer =  `<a class="btn" href="../../index.html">Go back to main Page</a>
     <p>&copy; 2026 My Developer Portfolio. All rights reserved.</p>`;
 
   document.getElementById("site-subheader").innerHTML=header;
