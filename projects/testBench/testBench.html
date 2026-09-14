@@ -16,7 +16,7 @@
 			<div class="hero-copy">
 				<p class="eyebrow">CASE STUDY / REPLACE THIS LABEL</p>
 				<h2 id="project-title">Test bench for ESCs</h2>
-				<p class="hero-description">Introduce the project in two or three sentences. Explain what it does, who it is for, and the problem it solves.</p>
+				<p class="hero-description">During my work-study program at Elistair I worked in the software team to create an app to automate test for the drone ESCs (Electronic Speed Controller)</p>
 				<div class="project-actions">
 					<a class="btn-secondary" href="#video">Watch demo <span aria-hidden="true">↓</span></a>
 				</div>
@@ -57,9 +57,19 @@
 			</div>
 			<div class="dive-grid">
 				<article class="dive-card">
-					<span class="dive-number">A</span>
-					<h3>Specific topic or feature</h3>
-					<p>Describe an interesting technical choice, feature, or challenge. Explain the context, your approach, and what you learned.</p>
+					<span class="dive-number">Architecture</span>
+					<h3>Which technologies to use ?</h3>
+					<p>While in the initial phase of development, I was given complete autonomy over what technologies to use for this project.</p>
+					<p>Understanding that, by choosing the technologies most adapted to the project's needs and matching the companies' available skills, I decided to focus on the fundamentals of what this app needs to do: Communicate with a drone.</p>
+					<p>⁣To communicate effectively with the drone's autopilot, the simplest solution was to utilise the MAVLink/MAVDSK libraries available in C, C++, Java and Python (and others but only as proof of concepts), which limited my choice to those languages.</p>
+					<p>Considering the fact that all the other projects developed by Elistair used either the C or C++ implementations of MAVLink, I selected C++ as the language to make it easier for the other developers to jump in the projects (to assist me or as maintainers later on).</p>
+					<p>Using the QT language and QT Creator came naturally, as it was both a language and a visual interface I had experience with, and one of the apps made by our company already used those same tools.</p>
+				</article>
+				<article class="dive-card">
+					<span class="dive-number">Communication</span>
+					<h3>How to acquire the ESCs' data?</h3>
+					<p>As the main goal of this project was to test and aquire the status of each Electronic Speed Controller (ESC), a relayabled way to send commands to the drone and to read it's result was necessary.</p>
+					<p></p>
 				</article>
 				<article class="dive-card">
 					<span class="dive-number">B</span>
