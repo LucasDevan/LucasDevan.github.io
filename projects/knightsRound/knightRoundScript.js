@@ -40,7 +40,7 @@ if (form) {
     }
 
     if (!Number.isInteger(startColumn) || !Number.isInteger(startRow)) {
-      resultBox.textContent = 'Start column and row must be integers.';
+      resultBox.textContent = 'Start column and row must be integers between 0 and 30.';
       return;
     }
 
