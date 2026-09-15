@@ -1,0 +1,67 @@
+@‌startuml
+
+class Account{
+Int           Id
+String      Email
+String      Username
+String      Password
+String      DateOfCreation
+String      DateOfBirth
+Image	ProfilePictures
+}
+
+class Settings{
+Bool    DarkMode
+Bool    AccessibilityMode
+}
+
+abstract Card{
+Int      Id
+String  Name
+String  Description
+Date	    DateOfCreation
+Date	    DateLastModified
+string type
+}
+
+class Categories{
+Int CardId
+Int CategoryId
+}
+
+class Category{
+String Title
+string type
+}
+
+class Attributes{
+Int CategoryId
+Int attributeId
+}
+
+class Attribute{
+string  Label
+string  Value
+string type
+}
+
+class Collection{
+Bool CreatesCopyWhenEdited
+}
+
+Card "0.." <-- "1" Card : has relation with
+Card <|-- Character
+Card "0.." <-- "1" Account : creates
+Collection --|> Card
+Collection "1" --* Account
+Account "0..*" <-- "1" Account : isFriend
+
+Attributes -- "1.." Attribute
+Categories -- "1.." Category
+Category *-- "1" Attributes
+Account *-- "1" Settings
+
+Card *-- "1" Categories
+Card --o Collection
+
+@‌enduml

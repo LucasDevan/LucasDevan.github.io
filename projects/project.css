@@ -68,8 +68,8 @@ header {
 .section-heading p:last-child, .project-links p:last-child { color: var(--muted-text-color); }
 .project-gallery { display: grid; gap: 18px; grid-template-columns: 1.4fr 1fr 1fr; margin-top: 42px; }
 .project-gallery figure { margin: 0; }
-.project-gallery img { background: var(--card-background-color); display: block; height: 260px; object-fit: cover; width: 100%; }
-.project-gallery .gallery-feature img { height: 420px; }
+.project-gallery img { background: var(--card-background-color); display: block; height: auto; object-fit: cover; width: 100%; }
+.project-gallery .gallery-feature img { height: auto; }
 figcaption { color: var(--muted-text-color); font: 0.8rem Arial, sans-serif; padding-top: 12px; }
 figcaption strong { color: var(--accent-color); margin-right: 8px; }
 
