@@ -72,7 +72,9 @@
 					<span class="dive-number">User accounts</span>
 					<h3>How we implemented user registration, loggin and data usage</h3>
 					<p>As CardRacter was made with the goal of enabling it's users to create, save and share cards, it was very important for the app to have a distant data-base and accounts to let our usesrs save their creation in a secure manner</p>
-					<p>To this end we implemened an account creation system </p>
+					<p>To this end we implemened a native an account creation system with a user name, an email and a password that would be hashed and stored in the distant data base</p>
+					<p>Upon trying to login the app will ask the API for a the hashed password correspodnign to the given user name or email adress and check if it matches the hash of the one entered by the user</p>
+					<p>If the login succeeds the app will then load the information and cards linked to the user and allowing them to add and modify them</p>
 				</article>
 			</div>
 		</section>
