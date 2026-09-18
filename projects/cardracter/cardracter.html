@@ -20,13 +20,14 @@
 				<div class="project-actions">
 					<a class="btn-primary" href="https://github.com/Hatedero/cardracter_flutter" target="_blank" rel="noopener">View on the Flutter versio on GitHub <span aria-hidden="true">↗</span></a>
 					<a class="btn-primary" href="https://github.com/Hatedero/CardRacter" target="_blank" rel="noopener">View on the Kotlin versio on GitHub <span aria-hidden="true">↗</span></a>
+					<a class="btn-primary" href="https://github.com/LucasDevan/CardRacterAPI" target="_blank" rel="noopener">View on the API repository here<span aria-hidden="true">↗</span></a>
 					<a class="btn-secondary" href="#video">Watch demo <span aria-hidden="true">↓</span></a>
 				</div>
 			</div>
 			<dl class="project-facts">
-				<div><dt>Status</dt><dd>In progress</dd></div>
+				<div><dt>Status</dt><dd>Demo version completed</dd></div>
 				<div><dt>Role</dt><dd>Developer</dd></div>
-				<div><dt>Built with</dt><dd>Kotlin - JetPackCompose | Flutter</dd></div>
+				<div><dt>Built with</dt><dd>Kotlin - JetPackCompose | Flutter | Python - SQL</dd></div>
 			</dl>
 		</section>
 
@@ -61,8 +62,9 @@
 			<div class="dive-grid">
 				<article class="dive-card">
 					<span class="dive-number">Data-base</span>
-					<h3>What implementing a complex data-base in a mobile app taught us?</h3>
+					<h3>What implementing a complex data-base in a mobile app taught us ?</h3>
 					<p>At the start of the project me and my team mate wanted a data base that would match our ambitions by making it very flexible and futur proof for any further devellopement</p>
+					<img src="../../assets/projects/cardRacter/cardRacter_class_diagram.PNG" alt="Replace with the project's main screenshot">
 					<p>However having data classes inheriting from a common abstract data class act proved difficult as the right tools to create those abstract data classes and differentiate between the sub-classes didn't exist in Kotlin</p>
 					<p>The subsequent very complex implentation made any further developpement much more complicated as it required changing lots of complex and compact code while adding a lot of constraints on how to operate it</p>
 					<p>This mistake taught me and my class mate important lessons about addapting our ambitions not only to our current abilities but also to the platform we were developing on.</p>
@@ -70,11 +72,22 @@
 				</article>
 				<article class="dive-card">
 					<span class="dive-number">User accounts</span>
-					<h3>How we implemented user registration, loggin and data usage</h3>
+					<h3>How we implemented user registration, loggin and data usage ?</h3>
 					<p>As CardRacter was made with the goal of enabling it's users to create, save and share cards, it was very important for the app to have a distant data-base and accounts to let our usesrs save their creation in a secure manner</p>
 					<p>To this end we implemened a native an account creation system with a user name, an email and a password that would be hashed and stored in the distant data base</p>
 					<p>Upon trying to login the app will ask the API for a the hashed password correspodnign to the given user name or email adress and check if it matches the hash of the one entered by the user</p>
 					<p>If the login succeeds the app will then load the information and cards linked to the user and allowing them to add and modify them</p>
+				</article>
+				<article class="dive-card">
+					<span class="dive-number">API</span>
+					<h3>How to create and communicate with an API from a mobile APP ?</h3>
+					<p>As stated above the CardRacter app required a distance database to store the users' data in which would require an API to send to and aquire the data from.</p>
+					<p>At first we considered using Google's FireBase to serve as the API and data base while securing the connection for us, however this solution had two major issues</p>
+					<ul>
+						<li>The free version of FireBase couldn't support the database we had made since the classes were automatically handeled by Firebase</li>
+						<li>It would require our users to use a Google account to use the App, which would make it harder to test while developping</li>
+					</ul>
+					<p>That is why we decided to create our own database and thus API. I was tasked with making both, which I did using SQL for the data base and Python with the <a href="https://hugapi.github.io/hug">HUG API</a> which I had priore experience with.</p>
 				</article>
 			</div>
 		</section>
@@ -97,12 +110,12 @@
 			<div>
 				<p class="eyebrow">04 / EXPLORE</p>
 				<h2 id="links-title">Keep going</h2>
-				<p>Give visitors a clear next step: browse the code, try the live build, or read more about the project.</p>
-				<p>add</p>
-			</div>
-			<div class="link-list">
-				<a class="btn-large" href="https://github.com/" target="_blank" rel="noopener">GitHub repository <span aria-hidden="true">↗</span></a>
-				<a class="btn-large btn-outline" href="https://example.com/" target="_blank" rel="noopener">Live website <span aria-hidden="true">↗</span></a>
+				<div class="link-list">
+					<a class="btn-primary" href="https://github.com/Hatedero/cardracter_flutter" target="_blank" rel="noopener">View on the Flutter version on GitHub <span aria-hidden="true">↗</span></a>
+					<a class="btn-primary" href="https://github.com/Hatedero/CardRacter" target="_blank" rel="noopener">View on the Kotlin version on GitHub <span aria-hidden="true">↗</span></a>
+					<a class="btn-primary" href="https://github.com/LucasDevan/CardRacterAPI" target="_blank" rel="noopener">View on the API repository on GitHub<span aria-hidden="true">↗</span></a>
+					<a class="btn-secondary" href="https://www.figma.com/design/69iKL9lwlrZWavBtvvMNbY/CardRacter?node-id=23-82&t=Ahj8Jyz1anvZrWdQ-1" target="_blank" rel="noopener">View the Figma<span aria-hidden="true">↗</span></a>
+				</div>
 			</div>
 		</section>
 	</main>

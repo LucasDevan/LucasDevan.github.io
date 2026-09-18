@@ -83,7 +83,7 @@ figcaption strong { color: var(--accent-color); margin-right: 8px; }
 .video-placeholder p { font-size: 1.2rem; margin: 20px 0 4px; }
 .video-placeholder small { color: var(--muted-text-color); }
 .project-links { align-items: end; border-top: 1px solid var(--border-color); display: grid; gap: 40px; grid-template-columns: 1fr auto; padding: 82px 0; }
-.project-links .link-list { justify-content: end; margin: 0; }
+.project-links .link-list { justify-content: center; margin: 0; }
 .btn-outline { background: transparent; border: 1px solid var(--link-color); color: var(--text-color); }
 .btn-primary span, .btn-secondary span, .btn-large span { margin-left: 8px; }
 
