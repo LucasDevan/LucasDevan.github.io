@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="A detailed project presentation template.">
-	<title>Project title | My Developer Portfolio</title>
+	<title>CardRacter | My Developer Portfolio</title>
 	<link rel="stylesheet" href="../project.css">
 </head>
-<body>
-<header id="site-header">
-</header>
 
+<header id="site-subheader">
+</header>
+<body>
 	<main class="project-page">
 		<section class="project-hero" aria-labelledby="project-title">
 			<div class="hero-copy">
@@ -34,29 +35,46 @@
 		<section class="project-section" aria-labelledby="gallery-title">
 			<div class="section-heading">
 				<p class="eyebrow">01 / VISUALS</p>
-				<h2 id="gallery-title">A look inside the project</h2>
+				<h2 id="gallery-title">A look at the project</h2>
 				<p>The UI was made ussing Figma to allow ensure a better conception and userfriendlyness</p>
 				<a class="btn-primary" href="https://www.figma.com/design/69iKL9lwlrZWavBtvvMNbY/CardRacter?node-id=23-82&t=Ahj8Jyz1anvZrWdQ-1" target="_blank" rel="noopener">View the Figma<span aria-hidden="true">↗</span></a>
 			</div>
 			<div class="project-gallery">
 				<figure class="gallery-feature">
-					<img src="../../assets/projects/cardRacter/cardRacter_class_diagram.PNG" alt="Replace with the project's main screenshot">
+					<img src="../../assets/projects/cardRacter/" alt="Replace with the project's main screenshot">
 					<figcaption><strong>01</strong> Card list view</figcaption>
 				</figure>
 				<figure>
-					<img src="../../assets/projects/cardRacter/appFlow.png" alt="Replace with a secondary project screenshot">
+					<img src="../../assets/projects/cardRacter/ alt="Replace with a secondary project screenshot">
 					<figcaption><strong>02</strong> Close look at a card</figcaption>
 				</figure>
 				<figure>
-					<img src="../../assets/projects/cardRacter/trelloCardRacter.png" alt="Replace with a detail or process image">
-					<figcaption><strong>03</strong> Our database for this project</figcaption>
+					<img src="../../assets/projects/cardRacter/" alt="Replace with a detail or process image">
+					<figcaption><strong>03</strong>User detail view</figcaption>
+				</figure>
+			</div>
+		</section>
+
+		<section class="project-section" aria-labelledby="gallery-title">
+			<div class="section-heading">
+				<p class="eyebrow">02 / ORGANISATION</p>
+				<h2 id="gallery-title">A look behind the project</h2>
+			</div>
+			<div class="project-gallery">
+				<figure>
+					<img src="../../assets/projects/cardRacter/appFlow.png" alt="Diagram of the app flow">
+					<figcaption><strong>01</strong>App flow</figcaption>
+				</figure>
+				<figure>
+					<img src="../../assets/projects/cardRacter/trelloCardRacter.png" alt="Screenshot of our Trello board for CardRacter">
+					<figcaption><strong>02</strong>Our Trello</figcaption>
 				</figure>
 			</div>
 		</section>
 
 		<section class="project-section deep-dive" aria-labelledby="deep-dive-title">
 			<div class="section-heading">
-				<p class="eyebrow">02 / DEEP DIVE</p>
+				<p class="eyebrow">03 / DEEP DIVE</p>
 				<h2 id="deep-dive-title">The technical difficulties we met along the way</h2>
 			</div>
 			<div class="dive-grid">
@@ -88,13 +106,14 @@
 						<li>It would require our users to use a Google account to use the App, which would make it harder to test while developping</li>
 					</ul>
 					<p>That is why we decided to create our own database and thus API. I was tasked with making both, which I did using SQL for the data base and Python with the <a href="https://hugapi.github.io/hug">HUG API</a> which I had priore experience with.</p>
+					<p>From the app's end we used the Retrofit and Room libraries to send and receive the information from and to the API with a JSON formating</p>
 				</article>
 			</div>
 		</section>
 
 		<section id="video" class="project-section video-section" aria-labelledby="video-title">
 			<div class="section-heading">
-				<p class="eyebrow">03 / DEMO</p>
+				<p class="eyebrow">04 / DEMO</p>
 				<h2 id="video-title">See it in motion</h2>
 			</div>
 			<div class="video-placeholder" role="img" aria-label="Placeholder for a project demo video">
@@ -108,7 +127,7 @@
 
 		<section class="project-links" aria-labelledby="links-title">
 			<div>
-				<p class="eyebrow">04 / EXPLORE</p>
+				<p class="eyebrow">05 / EXPLORE</p>
 				<h2 id="links-title">Keep going</h2>
 				<div class="link-list">
 					<a class="btn-primary" href="https://github.com/Hatedero/cardracter_flutter" target="_blank" rel="noopener">View on the Flutter version on GitHub <span aria-hidden="true">↗</span></a>
