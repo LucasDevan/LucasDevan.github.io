@@ -1,23 +1,23 @@
 :root {
-  --background-color: #1a2131;
-  --text-color: #e2e8f0;
-  --important-text-color: #024dc5;
-  --extremums-background-color: #010411;
-  --card-background-color: #152946 ;
-  --selected-link-color:#1590c5;
-  --link-color: #16678a;
+    --background-color: #1a2131;
+    --text-color: #e2e8f0;
+    --important-text-color: #024dc5;
+    --extremums-background-color: #010411;
+    --card-background-color: #152946 ;
+    --selected-link-color:#1590c5;
+    --link-color: #16678a;
     --accent-color: #62d6c7;
     --muted-text-color: #9eabc0;
+    --muted-text-color-bis: #94a8c9;
     --border-color: rgba(226, 232, 240, 0.16);
-    --content-width: 1120px;
 }
 
 body {
-        font-family: Georgia, 'Times New Roman', serif;
+    font-family: Georgia, 'Times New Roman', serif;
     background: var(--background-color);
     color: var(--text-color);
-        margin: 0;
-        line-height: 1.6;
+    margin: 0;
+    line-height: 1.6;
 }
 
 header {
@@ -52,7 +52,7 @@ header {
     text-transform: uppercase;
 }
 
-.project-page { margin: 0 auto; max-width: var(--content-width); padding: 0 28px; }
+.project-page { margin: 0 auto; padding: 0 28px; }
 .project-hero { display: grid; gap: 64px; grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.5fr); padding: 110px 0 120px; }
 .project-hero h2 { font-size: clamp(3rem, 8vw, 6.5rem); line-height: 0.96; margin: 0 0 28px; max-width: 760px; }
 .hero-description { color: var(--muted-text-color); font-size: 1.2rem; max-width: 620px; }
@@ -67,17 +67,29 @@ header {
 .section-heading h2, .project-links h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.05; margin: 0 0 16px; }
 .section-heading p:last-child, .project-links p:last-child { color: var(--muted-text-color); }
 .project-gallery { display: grid; gap: 18px; grid-template-columns: 1.4fr 1fr 1fr; margin-top: 42px; }
-.project-gallery figure { margin: 0; }
-.project-gallery img { background: var(--card-background-color); display: block; height: auto; object-fit: cover; width: 100%; }
+.project-gallery figure { display: flex; flex-direction: column; margin: 0; }
+.project-gallery figure img, .project-gallery img { background: var(--card-background-color); border-radius: 12px; cursor: pointer; display: block; min-height: 120px ; height: auto; max-height: 420px; object-fit: contain; width: 100%; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.project-gallery figure img:hover, .project-gallery img:hover { box-shadow: 0 12px 28px rgba(1, 4, 17, 0.35); transform: translateY(-2px); }
 .project-gallery .gallery-feature img { height: auto; }
 figcaption { color: var(--muted-text-color); font: 0.8rem Arial, sans-serif; padding-top: 12px; }
 figcaption strong { color: var(--accent-color); margin-right: 8px; }
+
+.dive-card img { border-radius: 10px; display: block; margin-top: 20px; max-height: none; max-width: 100%; object-fit: contain; width: auto; }
+.image-lightbox { align-items: center; background: rgba(1, 4, 17, 0.9); display: flex; inset: 0; justify-content: center; opacity: 0; padding: 32px; pointer-events: none; position: fixed; transition: opacity 0.2s ease; visibility: hidden; z-index: 2000; }
+.image-lightbox.active { opacity: 1; pointer-events: auto; visibility: visible; }
+.image-lightbox img { background: var(--card-background-color); border-radius: 12px; box-shadow: 0 22px 70px rgba(0, 0, 0, 0.4); max-height: 90vh; max-width: 92vw; object-fit: contain; }
+.lightbox-close { background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); border-radius: 50%; color: var(--text-color); cursor: pointer; font-size: 1.6rem; height: 42px; line-height: 1; position: absolute; right: 22px; top: 18px; width: 42px; }
+body.lightbox-open { overflow: hidden; }
 
 .dive-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, 1fr); margin-top: 42px; }
 .dive-card { background: var(--card-background-color); border-top: 3px solid var(--accent-color); padding: 30px; }
 .dive-number { color: var(--accent-color); font: bold 0.8rem Arial, sans-serif; }
 .dive-card h3 { font-size: 1.5rem; margin: 34px 0 10px; }
 .dive-card p { color: var(--muted-text-color); margin: 0; }
+.dive-card ul li  { color: var(--muted-text-color-bis); margin: 0; }
+.dive-card p a { color: var(--link-color); margin: 0; }
+.dive-card p a:hover { color: var(--selected-link-color); margin: 0; }
+
 .video-placeholder { align-items: center; background: linear-gradient(135deg, #0b1325, #233a50); border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: center; margin-top: 42px; min-height: 440px; text-align: center; }
 .play-icon { align-items: center; border: 1px solid var(--accent-color); border-radius: 50%; color: var(--accent-color); display: flex; height: 64px; justify-content: center; padding-left: 4px; width: 64px; }
 .video-placeholder p { font-size: 1.2rem; margin: 20px 0 4px; }
@@ -118,6 +130,28 @@ nav a {
     color: var(--link-color);
     text-decoration: none;
     font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: var(--link-color);
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn a{
+    color: var(--text-color);
+}
+
+.btn a:hover{
+    color: var(--selected-link-color);
+}
+
+.btn:hover{
+    color: black;
 }
 
 /* Additional classes for buttons */

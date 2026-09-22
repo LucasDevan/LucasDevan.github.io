@@ -9,9 +9,10 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Georgia, 'Times New Roman', serif;
     background: var(--background-color);
     color: var(--text-color);
+    margin: 0;
 }
 
 header {
