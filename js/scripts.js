@@ -104,3 +104,76 @@ document.querySelectorAll('.gallery-item').forEach(card => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const projectPage = document.querySelector('.project-page');
+
+  if (!projectPage) {
+    return;
+  }
+
+  const projectImages = Array.from(projectPage.querySelectorAll('img'));
+
+  if (!projectImages.length) {
+    return;
+  }
+
+  const lightbox = document.createElement('div');
+  lightbox.className = 'image-lightbox';
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightbox.setAttribute('hidden', 'true');
+  lightbox.innerHTML = '<button class="lightbox-close" type="button" aria-label="Close image">×</button><img alt="Expanded project view" src="" />';
+
+  const lightboxImage = lightbox.querySelector('img');
+  const closeButton = lightbox.querySelector('.lightbox-close');
+  document.body.appendChild(lightbox);
+
+  const closeLightbox = () => {
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightbox.setAttribute('hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+  };
+
+  closeButton.addEventListener('click', closeLightbox);
+
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && lightbox.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+
+  projectImages.forEach((image) => {
+    const imageSource = image.getAttribute('src');
+
+    if (!imageSource || imageSource.trim() === '' || imageSource.endsWith('/')) {
+      return;
+    }
+
+    image.style.cursor = 'zoom-in';
+    image.setAttribute('tabindex', '0');
+
+    const openLightbox = () => {
+      lightboxImage.src = image.currentSrc || image.src;
+      lightboxImage.alt = image.alt || 'Project image';
+      lightbox.removeAttribute('hidden');
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lightbox-open');
+    };
+
+    image.addEventListener('click', openLightbox);
+    image.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openLightbox();
+      }
+    });
+  });
+});
