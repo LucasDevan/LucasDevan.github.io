@@ -52,6 +52,10 @@ header {
     text-transform: uppercase;
 }
 
+a { color: var(--link-color); margin: 0; }
+a:hover { color: var(--selected-link-color); margin: 0; }
+
+
 .project-page { margin: 0 auto; padding: 0 28px; }
 .project-hero { display: grid; gap: 64px; grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.5fr); padding: 110px 0 120px; }
 .project-hero h2 { font-size: clamp(3rem, 8vw, 6.5rem); line-height: 0.96; margin: 0 0 28px; max-width: 760px; }
