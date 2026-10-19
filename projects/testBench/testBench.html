@@ -63,20 +63,69 @@
 					<p>Understanding that, by choosing the technologies most adapted to the project's needs and matching the companies' available skills, I decided to focus on the fundamentals of what this app needs to do: Communicate with a drone.</p>
 					<p>⁣To communicate effectively with the drone's autopilot, the simplest solution was to utilize the MAVLink/MAVDSK libraries available in C, C++, Java and Python (and others but only as proof of concepts), which limited my choice to those languages.</p>
 					<p>Considering the fact that all the other projects developed by Elistair used either the C or C++ implementations of MAVLink, I selected C++ as the language to make it easier for the other developers to jump in the projects (to assist me or as maintainers later on).</p>
-					<p>Using the QT language and QT Creator came naturally, as it was both a language and a visual interface I had experience with, and one of the apps made by our company already used those same tools.</p>
+					<p>Using the QT language and QT Creator came naturally, as it was both a language and a visual interface I had experience with, and one of the apps made by our company already used those same framework.</p>
 				</article>
 				<article class="dive-card">
 					<span class="dive-number">Communication</span>
 					<h3>How to acquire the ESCs' data?</h3>
-					<p>As the main goal of this project was to test and acquire the status of each Electronic Speed Controller (ESC), a reliable way to send commands to the drone and to read it's result was necessary.</p>
-					<p></p>
+					<p>As the main goal of this project was to test and acquire the status of each Electronic Speed Controller (ESC), a reliable way to send commands to the drone and to read its result was necessary.</p>
+					<p>The first step I took was to create a separate thread, which would allow the communication part of the app to never be slowed down by the main program and to receive and send updates in real time.</p>
+					<p>Once in the communication thread created I followed the examples provided by MAVLINK to set up a clean connection with the auto pilot</p>
+					<p>To acquire the messages I used the classes provided to subscribe to the heartbeat, ESC status and ESC info message emitted by the drone, linked with a call back, allowing me to check for the continued connection and treat the information about the ESC as soon as possible</p>
+					<p>To send the messages I decided to create a while true loop with a simple timer, which would try to send the desired command every X seconds (set by the user) until the auto pilot confirmed that it had received the command, greatly reducing the risk of a command not being registered </p>
 				</article>
+				<article class="dive-card">
+					<span class="dive-number">The limits for each ESC</span>
+					<h3>How to know if an ESC is valid ?</h3>
+					<p>Since the goal of the app is to test the validity of the ESC, setting the upper and lower bounds allowed for each measured metrics is an integral part of the process, but pauses a handful of challenges</p>
+					<p>First of all, one of the main requests behind the app was to automate the testing process and let anyone run it without having to do any set up before hand, which immediately wrote off the idea of having the user input those values by hand</p>
+					<p>Likewise, hard coding the values in the app would force the company to rebuild and redeploy it every time a change is needed to be made to those values. Which would be annoying and time-consuming, especially for minor changes like those.</p>
+					<p>Thinking about what solution I could put in place, I noted that those values needed to be both simple to select and easy to modify and keep modified between sessions or reverse.</p>
+					<p>The solution I landed on was for the information about the ESCs to be stored in a JSON file on the computer's desktop, which the app would read from and let the user select between the folders, with one of them set as a default.</p>
+					<p>That way a user could simply select the correct name from the list of available validity files, without having to worry about checking the values himself, and the onces setting the value could simply open the folder containing the files and edit the values or create a new file for any new type of motor and type of testing which would require to have their own limits</p>
+					<p>This also allowed to add other values which could differ from ESC to ESC without adding a new UI element for them.</p>
+					<p  style="white-space: pre-line">
+						Here is an example of what the validity JSON file looks like :</p>
+					<p style="white-space: pre-wrap">{
+	"time":{
+		"setup_duration_ms":300000,
+		"average_on_ms":60000
+	},"voltage":{
+		"higher_bound":25,
+		"lower_bound":22
+	},"current":{
+		"higher_bound":25,
+		"lower_bound":0
+	},"temperature":{
+		"higher_bound":85,
+		"lower_bound":15,
+		"relative_range":35
+	},"rotations_per_minute":{
+		"higher_bound":1000,
+		"lower_bound":0
+	},"failure_flags":[1,2,3,4,7,8,9]
+}
+					</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="project-section" aria-labelledby="gallery-title">
+			<div class="section-heading">
+				<p class="eyebrow">02 / VISUALS</p>
+				<h2 id="gallery-title">A look at the bench</h2>
+			</div>
+			<div class="project-gallery">
+				<figure>
+					<img src="../../assets/projects/testBench/bench.jpg" alt="The physical bench">
+					<figcaption><strong>01</strong> A look at the test bench used alongside the app to test the ESCs</figcaption>
+				</figure>
 			</div>
 		</section>
 
 		<section id="video" class="project-section video-section" aria-labelledby="video-title">
 			<div class="section-heading">
-				<p class="eyebrow">02 / DEMO</p>
+				<p class="eyebrow">03 / DEMO</p>
 				<h2 id="video-title">See it in motion</h2>
 			</div>
 			<div class="video-placeholder" role="img" aria-label="Placeholder for a project demo video">
