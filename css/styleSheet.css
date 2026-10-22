@@ -12,7 +12,7 @@ body {
     font-family: Georgia, 'Times New Roman', serif;
     background: var(--background-color);
     color: var(--text-color);
-    margin: 0;
+    margin-left: 160px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -315,6 +315,7 @@ aside {
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
   box-sizing: border-box;
+  margin-right: 1%;
 }
     
 aside a, aside h1, aside p {
