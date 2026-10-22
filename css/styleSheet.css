@@ -364,14 +364,6 @@ aside a:hover {
 }
 
 /* document Image - Full width */
-.document-section {
-    width: 100%;
-    background: var(--background-color);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    margin: 20px 0;
-}
 
 .document-image-wrapper {
     width: 100%;
