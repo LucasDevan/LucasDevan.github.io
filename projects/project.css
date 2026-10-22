@@ -52,8 +52,8 @@ header {
     text-transform: uppercase;
 }
 
-a { color: var(--link-color); margin: 0; }
-a:hover { color: var(--selected-link-color); margin: 0; }
+a { color: var(--link-color);}
+a:hover { color: var(--selected-link-color);}
 
 
 .project-page { margin: 0 auto; padding: 0 28px; }
