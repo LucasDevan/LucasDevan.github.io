@@ -124,21 +124,15 @@ p a:hover{
     outline-offset: 3px;
 }
 
-.card img{
-    max-height: 500;
-    align-content: center;
+.card img {
+    display: block;
+    margin: 10px auto;
 }
 
-.card img{
-    max-height: 500;
-    align-content: center;
-    align-self: center;
-}
-
-.card a img{
-    max-height: 500;
-    align-content: center;
-    align-self: center;
+.card .image-link {
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
 }
 
 .btn {
