@@ -13,13 +13,15 @@ body {
     font-family: Georgia, 'Times New Roman', serif;
     background: var(--background-color);
     color: var(--text-color);
-    margin-left: var(--aside-size);
-    margin-right: var(--aside-size);
-    margin-top: 0px;
+    margin: 0px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.body_with_aside{
+    margin-left: var(--aside-size);
 }
 
 header {
