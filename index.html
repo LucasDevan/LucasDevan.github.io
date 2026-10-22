@@ -8,37 +8,34 @@
   <link rel="stylesheet" href="css/styleSheet.css">
 </head>
 
-<header id="site-header">
-</header>
-
 <body>
-  <section id="about">
-    <h2>About Myself</h2>
-    <p>I am Lucas Devanlay, a young software developer, discover more about me</p>
-    <a class="btn" href="aboutMe.html">Go to my about me page</a>
+  <header id="site-header">
+  </header>
+
+  <section>
+    <div id="about" class="card clickable" data-href="aboutMe.html" tabindex="0" role="link">
+        <h3>About Myself</h3>
+        <p>I am Lucas Devanlay, a young software developer, discover more about me.</p>
+    </div>
+
+    <div id="projects" class="card clickable" data-href="projects.html" tabindex="0" role="link">
+        <h3>My projects</h3>
+        <p>Learn more about all of the computer apps, web site or mobile app I worked on !</p>
+    </div>
+
+    <div id="skills" class="card clickable" data-href="skills.html" tabindex="0" role="link">
+        <h3>My skills</h3>
+        <p>See what skills, technologies and tools I mastered !</p>
+    </div>
+
+    <div id="misc" class="card clickable" data-href="miscellaneous.html" tabindex="0" role="link">
+        <h3>Miscellaneous</h3>
+        <p>Catch a glimpse of my hobbies and other interest !</p>
+    </div>
   </section>
 
-  <section id="projects">
-    <h2>About my projects</h2>
-    <p>See the list of all my development projects</p>
-    <a class="btn" href="projects.html">Go to my projects page</a>
-  </section>
-
-
-  <section id="skills">
-    <h2>My Skills</h2>
-    <p>Discover the list of all of my IT skills and how proficient I am in them</p>
-    <a class="btn" href="skills.html">Go to my skills page</a>
-  </section>
-
-  <section id="misc">
-    <h2>Miscellaneous</h2>
-    <p>All of my hobbies and other interest</p>
-    <a class="btn" href="miscellaneous.html">Go to my miscellaneous page</a>
-  </section>
-
+  <footer id="site-footer"></footer>
+  <script src="js/scripts.js"></script>
 </body>
-<footer id="site-footer"></footer>
-<script src="js/scripts.js"></script>
 
 </html>

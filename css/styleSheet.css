@@ -13,12 +13,18 @@ body {
     background: var(--background-color);
     color: var(--text-color);
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
     background: var(--extremums-background-color);
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-align: center;
+    width: 100%;
 }
 
 h1 a, h2 a, h3 a{
@@ -32,9 +38,11 @@ a:hover{
 
 footer {
     background: var(--extremums-background-color);
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     text-align: center;
-    margin-top: 40px;
+    margin-top: auto;
+    width: 100%;
 }
 
 nav a {
@@ -45,9 +53,13 @@ nav a {
 }
 
 section {
+    width: 90%;
     padding: 40px;
     max-width: 900px;
-    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 a .card{
