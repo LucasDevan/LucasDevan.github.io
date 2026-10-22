@@ -6,13 +6,16 @@
   --card-background-color: #152946 ;
   --selected-link-color:#1590c5;
   --link-color: #16678a;
+  --aside-size: 160px;
 }
 
 body {
     font-family: Georgia, 'Times New Roman', serif;
     background: var(--background-color);
     color: var(--text-color);
-    margin-left: 160px;
+    margin-left: var(--aside-size);
+    margin-right: var(--aside-size);
+    margin-top: 0px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -306,7 +309,7 @@ canvas {
 
 aside {
   height: 100vh; /* Full-height */
-  width: 160px; /* Set the width of the sidebar */
+  width: var(--aside-size); /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
